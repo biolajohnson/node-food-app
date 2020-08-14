@@ -6,7 +6,7 @@ const messageOne = document.querySelector('#message-1')
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const ingredientInput = search.value;
-    fetch('http://localhost:3000/foods?ingredient=' + ingredientInput).then((response) => {
+    fetch('/foods?ingredient=' + ingredientInput).then((response) => {
         response.json().then((data) => {
             messageOne.textContent = 'This is a ' + data.foodName;
         })
